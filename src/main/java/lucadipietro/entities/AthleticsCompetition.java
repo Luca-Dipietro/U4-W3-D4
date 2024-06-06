@@ -42,4 +42,12 @@ public class AthleticsCompetition extends Event {
     public void setWinner(People winner) {
         this.winner = winner;
     }
+
+    @Override
+    public String toString() {
+        return "AthleticsCompetition{" +
+                "athletes=" + athletes +
+                ", winner=" + winner +
+                '}';
+    }
 }

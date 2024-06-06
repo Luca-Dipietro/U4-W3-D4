@@ -106,4 +106,17 @@ public abstract class Event {
     public void setParticipations(List<Participation> participations) {
         this.participations = participations;
     }
+
+    @Override
+    public String toString() {
+        return "Event{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", eventDate=" + eventDate +
+                ", description='" + description + '\'' +
+                ", eventType=" + eventType +
+                ", maxParticipants=" + maxParticipants +
+                ", location=" + location +
+                '}';
+    }
 }

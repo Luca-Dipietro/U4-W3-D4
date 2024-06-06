@@ -108,4 +108,16 @@ public class People {
     public void setTotWin(Set<AthleticsCompetition> totWin) {
         this.totWin = totWin;
     }
+
+    @Override
+    public String toString() {
+        return "People{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", email='" + email + '\'' +
+                ", birthday=" + birthday +
+                ", sex='" + sex + '\'' +
+                '}';
+    }
 }

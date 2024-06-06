@@ -72,4 +72,15 @@ public class FootballMatch extends Event {
     public void setNumGolAwayTeam(Integer numGolAwayTeam) {
         this.numGolAwayTeam = numGolAwayTeam;
     }
+
+    @Override
+    public String toString() {
+        return "FootballMatch{" +
+                "homeTeam='" + homeTeam + '\'' +
+                ", awayTeam='" + awayTeam + '\'' +
+                ", winnerTeam='" + winnerTeam + '\'' +
+                ", numGolHomeTeam=" + numGolHomeTeam +
+                ", numGolAwayTeam=" + numGolAwayTeam +
+                '}';
+    }
 }

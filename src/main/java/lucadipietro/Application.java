@@ -28,7 +28,7 @@ public class Application {
         PeoplesDAO ped = new PeoplesDAO(em);
 
         Location location = new Location("Piazza Castello", "Fossano");
-        ld.save(location);
+//        ld.save(location);
 
         People luca = new People("Luca", "Dipietro", "luca.dipietro.ld@gmail.com", LocalDate.of(1997, 10, 16), "M");
         People mario = new People("Mario", "Rossi", "mariorossi@gmail.com", LocalDate.of(1990, 5, 24), "M");
@@ -36,7 +36,7 @@ public class Application {
 //        ped.save(mario);
 
         Set<People> athletes = new HashSet<>();
-        athletes.add(luca);
+//        athletes.add(luca);
 
         FootballMatch match = new FootballMatch("Derby", LocalDate.of(2023, 11, 7), "Football Derby", EventType.PUBBLICO, 2500, location, "Fossano", "Cuneo", "Fossano", 3, 1);
         Concert concert = new Concert("OndeSonore", LocalDate.of(2024, 6, 22), "OndeSonore Summer Festival", EventType.PUBBLICO, 5000, location, ConcertType.POP, false);
@@ -49,6 +49,10 @@ public class Application {
         Participation secondParticipation = new Participation(luca, competition, ParticipationState.CONFERMATA);
 //        pad.save(firstParticipation);
 //        pad.save(secondParticipation);
+        
+        ed.getConcertInStreaming(false).forEach(System.out::println);
+        ed.getPartiteVinteInCasa().forEach(System.out::println);
+        ed.getPartiteVinteInTrasferta().forEach(System.out::println);
 
         em.close();
         emf.close();

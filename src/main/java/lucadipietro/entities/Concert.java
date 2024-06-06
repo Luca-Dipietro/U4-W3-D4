@@ -41,4 +41,12 @@ public class Concert extends Event {
     public void setInStreaming(Boolean inStreaming) {
         this.inStreaming = inStreaming;
     }
+
+    @Override
+    public String toString() {
+        return "Concert{" +
+                "genre=" + genre +
+                ", inStreaming=" + inStreaming +
+                '}';
+    }
 }

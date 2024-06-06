@@ -2,12 +2,17 @@ package lucadipietro.entities;
 
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
+import jakarta.persistence.NamedQuery;
 import lucadipietro.enums.EventType;
 
 import java.time.LocalDate;
 
 @Entity
 @DiscriminatorValue("football_match")
+
+@NamedQuery(name = "getPartiteVinteInCasa", query = "SELECT fm FROM FootballMatch fm WHERE fm.homeTeam = fm.winnerTeam")
+@NamedQuery(name = "getPartiteVinteInTrasferta", query = "SELECT fm FROM FootballMatch fm WHERE fm.awayTeam = fm.winnerTeam")
+
 public class FootballMatch extends Event {
 
     private String homeTeam;

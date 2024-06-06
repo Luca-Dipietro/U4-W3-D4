@@ -33,13 +33,12 @@ public class People {
     public People() {
     }
 
-    public People(String name, String surname, String email, LocalDate birthday, String sex, List<Participation> participations) {
+    public People(String name, String surname, String email, LocalDate birthday, String sex) {
         this.name = name;
         this.surname = surname;
         this.email = email;
         this.birthday = birthday;
         this.sex = sex;
-        this.participations = participations;
     }
 
     public UUID getId() {

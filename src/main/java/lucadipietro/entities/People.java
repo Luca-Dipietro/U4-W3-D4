@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -22,6 +23,12 @@ public class People {
 
     @OneToMany(mappedBy = "people")
     private List<Participation> participations;
+
+    @ManyToMany(mappedBy = "athletes")
+    private Set<AthleticsCompetition> athleticsCompetitions;
+
+    @OneToMany(mappedBy = "winner")
+    private Set<AthleticsCompetition> totWin;
 
     public People() {
     }
@@ -85,5 +92,21 @@ public class People {
 
     public void setParticipations(List<Participation> participations) {
         this.participations = participations;
+    }
+
+    public Set<AthleticsCompetition> getAthleticsCompetitions() {
+        return athleticsCompetitions;
+    }
+
+    public void setAthleticsCompetitions(Set<AthleticsCompetition> athleticsCompetitions) {
+        this.athleticsCompetitions = athleticsCompetitions;
+    }
+
+    public Set<AthleticsCompetition> getTotWin() {
+        return totWin;
+    }
+
+    public void setTotWin(Set<AthleticsCompetition> totWin) {
+        this.totWin = totWin;
     }
 }

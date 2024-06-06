@@ -10,7 +10,9 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "events")
-public class Event {
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "type")
+public abstract class Event {
 
     @Id
     @GeneratedValue

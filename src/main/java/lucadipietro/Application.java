@@ -32,8 +32,8 @@ public class Application {
 
         People luca = new People("Luca", "Dipietro", "luca.dipietro.ld@gmail.com", LocalDate.of(1997, 10, 16), "M");
         People mario = new People("Mario", "Rossi", "mariorossi@gmail.com", LocalDate.of(1990, 5, 24), "M");
-        ped.save(luca);
-        ped.save(mario);
+//        ped.save(luca);
+//        ped.save(mario);
 
         Set<People> athletes = new HashSet<>();
         athletes.add(luca);
@@ -41,15 +41,15 @@ public class Application {
         FootballMatch match = new FootballMatch("Derby", LocalDate.of(2023, 11, 7), "Football Derby", EventType.PUBBLICO, 2500, location, "Fossano", "Cuneo", "Fossano", 3, 1);
         Concert concert = new Concert("OndeSonore", LocalDate.of(2024, 6, 22), "OndeSonore Summer Festival", EventType.PUBBLICO, 5000, location, ConcertType.POP, false);
         AthleticsCompetition competition = new AthleticsCompetition("Giro D'Italia", LocalDate.of(2024, 5, 6), "Giro D'Italia final rush", EventType.PUBBLICO, 25000, location, athletes, luca);
-        ed.save(match);
-        ed.save(concert);
-        ed.save(competition);
+//        ed.save(match);
+//        ed.save(concert);
+//        ed.save(competition);
 
         Participation firstParticipation = new Participation(luca, match, ParticipationState.CONFERMATA);
         Participation secondParticipation = new Participation(luca, competition, ParticipationState.CONFERMATA);
-        pad.save(firstParticipation);
-        pad.save(secondParticipation);
-        
+//        pad.save(firstParticipation);
+//        pad.save(secondParticipation);
+
         em.close();
         emf.close();
     }
